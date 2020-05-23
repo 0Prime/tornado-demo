@@ -1,0 +1,29 @@
+<html>
+
+<head>
+  <script>
+    const foo = () => {
+      const foo = fetch('http://localhost:8888/')
+        .then(r => r.json())
+        .then(xs => {
+          const list = document.getElementById('myUL')
+          xs.forEach(text => {
+            const listItem = document.createElement('li')
+            listItem.appendChild(document.createTextNode(text))
+            list.appendChild(listItem)
+          })
+        })
+    }
+  </script>
+</head>
+
+<body onload="foo()">
+  <h1>Page loaded...</h1>
+
+  <ul id="myUL">
+
+  </ul>
+
+</body>
+
+</html>
